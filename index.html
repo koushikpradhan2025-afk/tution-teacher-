@@ -1,0 +1,785 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bright Future Tuition Centre</title>
+<meta name="description" content="Quality tuition for students from Class 1 to 12. Contact us for admission and personalized learning.">
+
+<style>
+:root {
+  --primary: #2457e6;
+  --dark: #14213d;
+  --light: #f4f7ff;
+  --accent: #ffb703;
+  --white: #ffffff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  color: var(--dark);
+  line-height: 1.7;
+  background: white;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.container {
+  width: 90%;
+  max-width: 1150px;
+  margin: auto;
+}
+
+header {
+  background: white;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 15px #0000000c;
+}
+
+nav {
+  min-height: 75px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--primary);
+}
+
+.logo span {
+  color: var(--accent);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.nav-links a:hover {
+  color: var(--primary);
+}
+
+.btn {
+  display: inline-block;
+  background: var(--primary);
+  color: white;
+  padding: 12px 23px;
+  border-radius: 8px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.btn:hover {
+  background: #153db5;
+  transform: translateY(-2px);
+}
+
+.btn-yellow {
+  background: var(--accent);
+  color: var(--dark);
+}
+
+.hero {
+  background: linear-gradient(120deg, #edf2ff, #fff9e8);
+  padding: 85px 0;
+  overflow: hidden;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 45px;
+  align-items: center;
+}
+
+.tag {
+  display: inline-block;
+  color: var(--primary);
+  background: #dfe8ff;
+  border-radius: 30px;
+  padding: 6px 14px;
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 18px;
+}
+
+.hero h1 {
+  font-size: clamp(36px, 5vw, 57px);
+  line-height: 1.15;
+  margin-bottom: 20px;
+}
+
+.hero h1 span {
+  color: var(--primary);
+}
+
+.hero p {
+  color: #5c6579;
+  font-size: 17px;
+  margin-bottom: 25px;
+}
+
+.hero-image {
+  min-height: 340px;
+  border-radius: 25px;
+  background: linear-gradient(145deg, #d9e5ff, #ffe8ad);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 110px;
+  box-shadow: 0 20px 50px #243e7518;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  margin-top: 35px;
+  max-width: 460px;
+}
+
+.stat strong {
+  display: block;
+  color: var(--primary);
+  font-size: 24px;
+}
+
+.stat small {
+  color: #677085;
+}
+
+section {
+  padding: 75px 0;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.section-title h2 {
+  font-size: 34px;
+  margin-bottom: 10px;
+}
+
+.section-title p {
+  color: #697386;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.card {
+  background: white;
+  padding: 27px;
+  border-radius: 16px;
+  border: 1px solid #e7eaf2;
+  box-shadow: 0 7px 25px #172b4d08;
+  transition: 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px #172b4d12;
+}
+
+.card-icon {
+  font-size: 37px;
+  margin-bottom: 12px;
+}
+
+.card h3 {
+  margin-bottom: 10px;
+}
+
+.card p {
+  color: #697386;
+  font-size: 15px;
+}
+
+.about {
+  background: var(--light);
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  align-items: center;
+  gap: 45px;
+}
+
+.teacher-box {
+  background: #dce7ff;
+  min-height: 300px;
+  border-radius: 20px;
+  display: grid;
+  place-items: center;
+  font-size: 105px;
+}
+
+.about h2 {
+  font-size: 34px;
+  margin-bottom: 15px;
+}
+
+.about p {
+  color: #596579;
+  margin-bottom: 15px;
+}
+
+.check-list {
+  list-style: none;
+  margin: 18px 0 25px;
+}
+
+.check-list li {
+  margin: 8px 0;
+}
+
+.check-list li::before {
+  content: "✓ ";
+  color: #159957;
+  font-weight: bold;
+}
+
+.schedule {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.schedule th, .schedule td {
+  text-align: left;
+  padding: 15px;
+  border-bottom: 1px solid #e9edf5;
+}
+
+.schedule th {
+  background: var(--primary);
+  color: white;
+}
+
+.schedule tr:nth-child(even) {
+  background: #f5f7fc;
+}
+
+.admission {
+  background: linear-gradient(120deg, #edf2ff, #fff8e6);
+}
+
+.form-wrap {
+  max-width: 720px;
+  margin: auto;
+  padding: 32px;
+  background: white;
+  border-radius: 18px;
+  box-shadow: 0 10px 35px #172b4d0c;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.field.full {
+  grid-column: 1 / -1;
+}
+
+.field input, .field select, .field textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #d8deeb;
+  border-radius: 8px;
+  font: inherit;
+  background: white;
+}
+
+.field input:focus, .field select:focus,
+.field textarea:focus {
+  outline: 2px solid #a8bdff;
+  border-color: var(--primary);
+}
+
+.form-wrap .btn {
+  width: 100%;
+  margin-top: 22px;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.contact-item {
+  padding: 24px;
+  border-radius: 14px;
+  background: var(--light);
+  text-align: center;
+  overflow-wrap: anywhere;
+}
+
+.contact-item .card-icon {
+  font-size: 30px;
+}
+
+footer {
+  background: #111d35;
+  color: white;
+  padding: 30px 0;
+  text-align: center;
+}
+
+footer p {
+  color: #c4ccdb;
+  font-size: 14px;
+  margin-top: 8px;
+}
+
+.whatsapp {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 90;
+  width: 58px;
+  height: 58px;
+  display: grid;
+  place-items: center;
+  background: #20bf65;
+  color: white;
+  border-radius: 50%;
+  font-size: 27px;
+  box-shadow: 0 5px 20px #0002;
+}
+
+@media (max-width: 800px) {
+  .hero-grid, .about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    padding: 55px 0;
+  }
+
+  .hero-image {
+    min-height: 240px;
+    font-size: 85px;
+  }
+
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .nav-links {
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+
+  .nav-links a {
+    font-size: 13px;
+  }
+
+  .nav-links .btn {
+    padding: 8px 12px;
+  }
+}
+
+@media (max-width: 520px) {
+  nav {
+    padding: 12px 0;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .nav-links {
+    justify-content: flex-start;
+    gap: 10px 16px;
+  }
+
+  .cards, .contact-grid, .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .field.full {
+    grid-column: auto;
+  }
+
+  section {
+    padding: 55px 0;
+  }
+
+  .section-title h2, .about h2 {
+    font-size: 28px;
+  }
+
+  .form-wrap {
+    padding: 22px;
+  }
+
+  .schedule th, .schedule td {
+    padding: 10px 7px;
+    font-size: 13px;
+  }
+
+  .stats {
+    gap: 8px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="container">
+    <nav>
+      <a href="#home" class="logo">Bright<span>Future</span></a>
+
+      <div class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#courses">Courses</a>
+        <a href="#about">About</a>
+        <a href="#schedule">Schedule</a>
+        <a href="#contact" class="btn">Contact Us</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero" id="home">
+    <div class="container hero-grid">
+      <div>
+        <span class="tag">🎓 Admissions Open</span>
+        <h1>Build Your Future With <span>Quality Education</span></h1>
+        <p>
+          Personalized tuition, experienced teaching and individual
+          attention to help every student learn with confidence.
+        </p>
+
+        <a href="#admission" class="btn">Join Our Classes →</a>
+        <a href="#courses" class="btn btn-yellow">Explore Courses</a>
+
+        <div class="stats">
+          <div class="stat">
+            <strong>1–12</strong>
+            <small>Class Levels</small>
+          </div>
+          <div class="stat">
+            <strong>1:1</strong>
+            <small>Personal Attention</small>
+          </div>
+          <div class="stat">
+            <strong>100%</strong>
+            <small>Learning Focus</small>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-image" aria-label="Education illustration">
+        📚👨‍🏫
+      </div>
+    </div>
+  </section>
+
+  <section id="courses">
+    <div class="container">
+      <div class="section-title">
+        <h2>Our Courses</h2>
+        <p>Choose the right learning programme for your child.</p>
+      </div>
+
+      <div class="cards">
+        <article class="card">
+          <div class="card-icon">📖</div>
+          <h3>Primary Classes</h3>
+          <p>Classes 1–5. Build strong foundations in language, maths and general studies.</p>
+        </article>
+
+        <article class="card">
+          <div class="card-icon">✏️</div>
+          <h3>Middle School</h3>
+          <p>Classes 6–8. Clear concepts, regular practice and school exam preparation.</p>
+        </article>
+
+        <article class="card">
+          <div class="card-icon">🎯</div>
+          <h3>Secondary Classes</h3>
+          <p>Classes 9–10. Subject-focused learning and board exam preparation.</p>
+        </article>
+
+        <article class="card">
+          <div class="card-icon">🔬</div>
+          <h3>Higher Secondary</h3>
+          <p>Classes 11–12. Subject-specific coaching based on the teacher's expertise.</p>
+        </article>
+
+        <article class="card">
+          <div class="card-icon">📝</div>
+          <h3>Test Preparation</h3>
+          <p>Practice tests, revision sessions and performance feedback.</p>
+        </article>
+
+        <article class="card">
+          <div class="card-icon">💻</div>
+          <h3>Online Tuition</h3>
+          <p>Learn from home with online classes, subject to availability.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="container about-grid">
+      <div class="teacher-box">👨‍🏫</div>
+
+      <div>
+        <span class="tag">About Our Teacher</span>
+        <h2>Learning Made Simple & Effective</h2>
+        <p>
+          Welcome to Bright Future Tuition Centre. Our goal is to
+          make learning understandable, enjoyable and effective for
+          every student.
+        </p>
+
+        <ul class="check-list">
+          <li>Friendly and supportive teaching environment</li>
+          <li>Individual attention for students</li>
+          <li>Regular practice and revision</li>
+          <li>Progress updates for parents</li>
+          <li>Focus on understanding, not just memorization</li>
+        </ul>
+
+        <a href="#contact" class="btn">Talk to the Teacher</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="schedule">
+    <div class="container">
+      <div class="section-title">
+        <h2>Class Schedule</h2>
+        <p>Example timetable — update according to your actual classes.</p>
+      </div>
+
+      <div style="overflow-x:auto">
+        <table class="schedule">
+          <thead>
+            <tr>
+              <th>Class</th>
+              <th>Days</th>
+              <th>Time</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Classes 1–5</td>
+              <td>Mon – Fri</td>
+              <td>4:00 PM – 5:00 PM</td>
+            </tr>
+            <tr>
+              <td>Classes 6–8</td>
+              <td>Mon – Fri</td>
+              <td>5:00 PM – 6:00 PM</td>
+            </tr>
+            <tr>
+              <td>Classes 9–10</td>
+              <td>Mon – Sat</td>
+              <td>6:00 PM – 7:30 PM</td>
+            </tr>
+            <tr>
+              <td>Classes 11–12</td>
+              <td>By Arrangement</td>
+              <td>Contact Teacher</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="admission" id="admission">
+    <div class="container">
+      <div class="section-title">
+        <h2>Admission Enquiry</h2>
+        <p>Fill in the details to enquire about tuition classes.</p>
+      </div>
+
+      <form class="form-wrap" id="admissionForm">
+        <div class="form-grid">
+          <div class="field">
+            <label for="student">Student Name *</label>
+            <input id="student" name="student" required
+                   placeholder="Enter student name">
+          </div>
+
+          <div class="field">
+            <label for="parent">Parent Name</label>
+            <input id="parent" name="parent"
+                   placeholder="Enter parent name">
+          </div>
+
+          <div class="field">
+            <label for="phone">Mobile Number *</label>
+            <input id="phone" name="phone" type="tel"
+                   inputmode="numeric" pattern="[0-9]{10}"
+                   maxlength="10" required
+                   placeholder="10-digit mobile number">
+          </div>
+
+          <div class="field">
+            <label for="class">Select Class *</label>
+            <select id="class" name="class" required>
+              <option value="">Choose class</option>
+              <option>Class 1–5</option>
+              <option>Class 6–8</option>
+              <option>Class 9–10</option>
+              <option>Class 11–12</option>
+              <option>Other</option>
+            </select>
+          </div>
+
+          <div class="field full">
+            <label for="subject">Subject / Course</label>
+            <input id="subject" name="subject"
+                   placeholder="e.g. Maths, English, Science">
+          </div>
+
+          <div class="field full">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="3"
+                      placeholder="Any questions?"></textarea>
+          </div>
+        </div>
+
+        <button type="submit" class="btn">Send Enquiry on WhatsApp</button>
+        <p style="font-size:12px;color:#697386;margin-top:12px">
+          Your enquiry will open in WhatsApp for you to send.
+        </p>
+      </form>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <div class="section-title">
+        <h2>Contact Us</h2>
+        <p>We are happy to answer your questions.</p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-item">
+          <div class="card-icon">📞</div>
+          <h3>Phone</h3>
+          <p id="phoneDisplay">+91 XXXXXXXXXX</p>
+        </div>
+
+        <div class="contact-item">
+          <div class="card-icon">📍</div>
+          <h3>Our Location</h3>
+          <p>Your Village / Town, District, West Bengal</p>
+        </div>
+
+        <div class="contact-item">
+          <div class="card-icon">🕒</div>
+          <h3>Class Hours</h3>
+          <p>Monday – Saturday<br>Afternoon & Evening</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="logo" style="color:white">Bright<span>Future</span></div>
+    <p>Quality Education • Better Learning • Brighter Future</p>
+    <p>© <span id="year"></span> Bright Future Tuition Centre. All rights reserved.</p>
+  </div>
+</footer>
+
+<a class="whatsapp" id="whatsappLink"
+   href="https://wa.me/91XXXXXXXXXX"
+   target="_blank" rel="noopener noreferrer"
+   aria-label="Contact on WhatsApp">✆</a>
+
+<script>
+// IMPORTANT: Replace this with your real WhatsApp number.
+// Include India's country code 91, without + or spaces.
+const WHATSAPP_NUMBER = "91XXXXXXXXXX";
+
+document.getElementById("year").textContent =
+  new Date().getFullYear();
+
+document.getElementById("whatsappLink").href =
+  "https://wa.me/" + WHATSAPP_NUMBER;
+
+document.getElementById("admissionForm")
+  .addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    if (WHATSAPP_NUMBER.includes("X")) {
+      alert("Please add your real WhatsApp number in the HTML code first.");
+      return;
+    }
+
+    const student = document.getElementById("student").value.trim();
+    const parent = document.getElementById("parent").value.trim();
+    const phone = document.getElementById("phone").value.trim();
+    const studentClass = document.getElementById("class").value;
+    const subject = document.getElementById("subject").value.trim();
+    const message = document.getElementById("message").value.trim();
+
+    const text =
+`NEW TUITION ADMISSION ENQUIRY
+
+Student Name: ${student}
+Parent Name: ${parent || "Not provided"}
+Mobile: ${phone}
+Class: ${studentClass}
+Subject: ${subject || "Not specified"}
+Message: ${message || "None"}`;
+
+    const url = "https://wa.me/" + WHATSAPP_NUMBER +
+                "?text=" + encodeURIComponent(text);
+
+    window.open(url, "_blank", "noopener,noreferrer");
+  });
+</script>
+
+</body>
+</html>
